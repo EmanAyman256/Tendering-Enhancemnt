@@ -1,0 +1,8 @@
+applications:
+- name: tendering
+  instances: 1
+  memory: 1G
+  buildpacks:
+    - staticfile_buildpack
+  path: /dist/sd-app  
+

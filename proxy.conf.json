@@ -1,0 +1,10 @@
+{
+  "/api": {
+    "target": "https://spring-security-hybrid-usage-00-00.cfapps.us10-001.hana.ondemand.com", 
+    "secure": false,                          
+    "logLevel": "debug",                   
+    "pathRewrite": {
+      "^/api": ""                           
+    }
+}
+}

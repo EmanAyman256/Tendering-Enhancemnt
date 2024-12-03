@@ -1,0 +1,56 @@
+    <app-alert></app-alert>
+    <p-toast/>
+    <div class=" container mt-5 pt-5">
+        <div class="row">
+            <div class="head mt-3">
+                    <h3 class="text-center">Register</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 offset-md-3 ">
+                <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                    <div class="mb-3">
+                        <label class="form-label">First Name</label>
+                        <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f['firstName'].errors }" />
+                        <div *ngIf="submitted && f['firstName'].errors" class="invalid-feedback">
+                            <div *ngIf="f['firstName'].errors['required']">First Name is required</div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Last Name</label>
+                        <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f['lastName'].errors }" />
+                        <div *ngIf="submitted && f['lastName'].errors" class="invalid-feedback">
+                            <div *ngIf="f['lastName'].errors['required']">Last Name is required</div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Username</label>
+                        <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f['username'].errors }" />
+                        <div *ngIf="submitted && f['username'].errors" class="invalid-feedback">
+                            <div *ngIf="f['username'].errors['required']">Username is required</div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <input type="email" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f['email'].errors }" />
+                        <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+                            <div *ngIf="f['email'].errors['required']">Email is required</div>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center my-3">
+                        <button [disabled]="loading" class="btn btn-primary">
+                            <span *ngIf="loading" class="spinner-border spinner-border-sm me-1"></span>
+                            Register
+                        </button>
+                        <a routerLink="/login" class="btn btn-link">Cancel</a>
+
+                    </div>
+                    <div class="invalid-feedback" *ngIf="!loading && submitted">Activation Link has been sent to your Email </div>
+
+                </form>
+            </div>
+        </div>
+    
+    </div>
+    
+    
